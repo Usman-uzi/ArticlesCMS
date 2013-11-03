@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once '../includes/connection.php';
+include_once 'includes/connection.php';
 
 if(isset($_SESSION['logged_in'])){?>
 
@@ -8,14 +8,14 @@ if(isset($_SESSION['logged_in'])){?>
 
 <head>
 <title>CMS Tutorial</title>
-<link rel="stylesheet" href="../styles/style.css" />
+<link rel="stylesheet" href="styles/style.css" />
 </head>
 
 <body>
 <div class="container"><a href="index.php">CMS</a>
 <br/>
 <ol>
-<li><a href="../Logout.php">Logout</a></li>
+<li><a href="Logout.php">Logout</a></li>
 <li></li>
 </ol>
 </div>
@@ -38,7 +38,7 @@ else {
 			$num=$query->rowCount();
 			if($num==	1){
 				$_SESSION['logged_in']=true;
-				header('Location:index.php');
+				header('Location:login.php');
 				exit();
 			}
 			else 
@@ -55,24 +55,29 @@ else {
 
 <head>
 <title>CMS Tutorial</title>
-<link rel="stylesheet" href="../styles/style.css" />
+<link rel="stylesheet" href="styles/style.css" />
 </head>
 
 <body>
-<div class="container"><a href="index.php">CMS</a>
-<br/>
+<div class="body-wrapper">
+<?php include 'shared/header.php';?>
+
+
 <?php if(isset($error)){?>
 <small style="color:#aa0000";><?php echo $error ?></small>
 <?php 
 }
 ?>
 <br/>
-<form action="index.php" method="post" autocomplete="off">
+<form action="login.php" method="post" autocomplete="off">
 <input type="text" name="name" placeholder="user name"/>
 <input type="password" name="password" placeholder="password" />
 <input type="submit" value="login"/>
 </form>
+
+<?php include 'shared/footer.php';?>
 </div>
+
 </body>
 </html>
 	

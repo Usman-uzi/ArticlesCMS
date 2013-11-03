@@ -1,24 +1,17 @@
-<?php
-	
-	if(isset($_SESSION['logged_in'])){
-		$status=true;
-	}
+<?php 
+  //include_once 'shared/header.php';
+  session_start();
 ?>
-
 <html>
-
 <head>
 <title>CMS Tutorial</title>
-<link rel="stylesheet" href="styles/style.css" />
+	<link rel="stylesheet" href="styles/style.css" />
 </head>
 
 <body>
-<?php if(isset($status)){?>
-<a href="Logout.php">Logout here</a>
-<a href="admin/index.php">Administration</a>
-<?php } else {?>
-<a href="admin/index.php">Login here</a>
-<?php }?>
+
+<div class="body-wraper">
+<?php include 'shared/header.php';?>
 <br/>
 
 <div class="container"><a href="index.php">CMS</a>
@@ -26,6 +19,12 @@
 <ol>
 <li><a href="Articles.php">Our Articles</a></li>
 </ol>
+
 </div>
+
+</div>
+<?php include 'shared/footer.php';?>
+
+
 </body>
 </html>

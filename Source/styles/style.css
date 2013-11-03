@@ -1,1 +1,34 @@
 @CHARSET "ISO-8859-1";
+body{
+	width: 70%;
+	margin-left: 15%;
+
+}
+.header-wraper{
+
+	}
+.header-wraper-title{
+	font-family: fantasy;
+	font-size: -webkit-xxx-large;
+	color: brown;
+	}
+.header-wraper-links{
+	
+	}
+	
+.body-wraper{
+	background-color:pink;
+	padding:4%;
+	 min-height: 100%;
+  	/* equal to footer height */
+  	margin-bottom: -142px; 
+	}
+	
+	.site-footer, .body-wraper:after {
+  	/* .push must be the same height as footer */
+  		height: 142px; 
+	}
+	
+	.site-footer {
+  		background: orange;
+	}
